@@ -38,6 +38,17 @@
             console.log(`changed handled programatically ${event}`);
         })
     </script>
+
+  <script>
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('service worker registered', reg))
+          .catch(err => console.log('service worker error', err));
+      });
+    }
+  </script>
+
 </body>
 
 </html>

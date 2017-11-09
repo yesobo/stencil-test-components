@@ -4,32 +4,63 @@
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
 
-import { MyComponent as MyComponent } from './components/my-component/my-component';
+import { StHeader as StHeader } from './components/st-header/st-header';
 
-interface HTMLMyComponentElement extends MyComponent, HTMLElement {
+interface HTMLStHeaderElement extends StHeader, HTMLElement {
 }
-declare var HTMLMyComponentElement: {
-  prototype: HTMLMyComponentElement;
-  new (): HTMLMyComponentElement;
+declare var HTMLStHeaderElement: {
+  prototype: HTMLStHeaderElement;
+  new (): HTMLStHeaderElement;
 };
 declare global {
   interface HTMLElementTagNameMap {
-      "my-component": HTMLMyComponentElement;
+      "st-header": HTMLStHeaderElement;
   }
   interface ElementTagNameMap {
-      "my-component": HTMLMyComponentElement;
+      "st-header": HTMLStHeaderElement;
   }
   namespace JSX {
       interface IntrinsicElements {
-          "my-component": JSXElements.MyComponentAttributes;
+          "st-header": JSXElements.StHeaderAttributes;
       }
   }
   namespace JSXElements {
-      export interface MyComponentAttributes extends HTMLAttributes {
+      export interface StHeaderAttributes extends HTMLAttributes {
           mode?: string,
           color?: string,
         
-          first?: string,
+          title?: string,
+          last?: string
+      }
+  }
+}
+
+import { StInput as StInput } from './components/st-input/st-input';
+
+interface HTMLStInputElement extends StInput, HTMLElement {
+}
+declare var HTMLStInputElement: {
+  prototype: HTMLStInputElement;
+  new (): HTMLStInputElement;
+};
+declare global {
+  interface HTMLElementTagNameMap {
+      "st-input": HTMLStInputElement;
+  }
+  interface ElementTagNameMap {
+      "st-input": HTMLStInputElement;
+  }
+  namespace JSX {
+      interface IntrinsicElements {
+          "st-input": JSXElements.StInputAttributes;
+      }
+  }
+  namespace JSXElements {
+      export interface StInputAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
+        
+          value?: string,
           last?: string
       }
   }

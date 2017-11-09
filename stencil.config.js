@@ -1,12 +1,12 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'sttestcomponents',
   generateDistribution: true,
   bundles: [
-    { components: ['my-component'] }
+    { components: ['st-header', 'st-input'] }
   ]
 };
 
 exports.devServer = {
-  root: 'www',
-  watchGlob: '**/**'
+    root: 'www',
+    watchGlob: '**/**'
 }
